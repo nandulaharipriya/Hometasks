@@ -1,6 +1,30 @@
 const apikey="AIzaSyBvt7SsMCdCa8kNeTO9Xux3Ms7hQDb-ydI"
 cou=0;
 Token_arr=[];
+Pagenation = document.getElementById('prev');
+videocontainer = document.getElementById('videosId');
+const searchform = document.getElementById('searchformid');
+searchform.addEventListener("submit", SearchVideo);
+async function SearchVideo(e) {
+    //console.log("searching..") //test
+    e.preventDefault()
+    var searchval = document.searchformbox.searchbox.value.trim();
+    var deleteDiv = document.getElementById("videosId");
+    while (deleteDiv.firstChild) {
+        deleteDiv.removeChild(deleteDiv.firstChild);
+    }
+    while (Pagenation.firstChild) {
+        Pagenation.removeChild(Pagenation.firstChild);
+    }
+    if (searchval == "") {
+        alert("please search....")
+        return false;
+    }
+    else {
+        console.log("hii");
+        fetchingFromAPI("", searchval);
+    }
+}
 async function fetchingFromAPI(nextToken,searchval){
     Token_arr.unshift(nextToken);
     const url = "https://www.googleapis.com/youtube/v3/search?key="+apikey+"&type=video&part=snippet&maxResults=15&q="+searchval+"&pageToken="+nextToken;
