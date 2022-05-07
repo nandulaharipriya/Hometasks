@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>YouTube</title>
+</head>
+
+<body>
+     <header>
+        <img src="logo.jpg" id="logo">
+    </header>
+    <div class="main">
+        <form action="" name="searchformbox" id="searchformid" method="post"><br><br>
+            <input type="text" id="search" name="searchbox" autocomplete="off" placeholder="Search">
+            <button type="submit" id="searchbutton">Search</button>
+        </form>
+        <div class="videocontainer" id="videosId">    </div>
+        <div class="prev-next" id="prev"></div>
+    </div> 
+    <script src='./videosearch.js'></script> 
+    <script src="./apiservice.js"></script>
+
+</body>
+<footer id="youtubefooter"><div>Youtube@2022</div></footer>
+
+</html>
